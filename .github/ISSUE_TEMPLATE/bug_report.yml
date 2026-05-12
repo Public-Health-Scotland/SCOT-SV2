@@ -1,0 +1,51 @@
+name: Bug Report
+description: File a bug report.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: |
+       Please describe what occurred, in what stage did the pipeline break, have you confirmed that it is not an error with input data?
+       What were the first debugging steps you followed to rule-in this pipeline or program being bugged?
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: |
+       How severe is the bug?
+       Warning : There is a warning being thrown but otherwise the pipeline is functional.
+       Minor : The pipeline is doing its job in terms of reportable results, but there is something else not as expected. Ie. A report is misformatted, logging is not being written to the correct location, etc.
+       Moderate : The pipeline has thrown an error or in some way was unable to run as expected. A short-term fix could be made, but it is possible that it could happen again.
+       Major : The pipeline consistently cannot run as expected. There is an essential failure state that is preventing completion for one or more samples which is likely to keep occurring.
+      options:
+        - Warning
+        - Minor
+        - Moderate
+        - Major
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date of failure 
+      description: Date on which the bug occured, given in a YYYY-MM-DD format. This is essential for checking the related logs in detail.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: textarea
+    id: log-locs
+    attributes:
+      label: Log locations
+      description: Please provide the paths for relevant log files. 

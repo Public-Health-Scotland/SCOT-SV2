@@ -1,0 +1,46 @@
+name: Feature Request
+description: Submit a feature request.
+title: "[Feature Request]: "
+labels: ["feature-request", "triage"]
+body:
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature type
+      description: |
+       What category does the feature request fall into?
+       Pipeline improvement : Generally improve the pipeline ie. expanding its analysis outputs
+       Pipeline standardisation : Ensuring that a pipeline conforms to standards - ie. changing a QC program
+       Stakeholder request : Fulfill an ask by a stakeholder
+       Efficiency changes : Change how a pipeline functions to improve Efficiency
+       Project interoperablility : Modify inputs/outputs/intermediate files for up/downstream processes
+      options:
+        - Pipeline improvement
+        - Pipeline standardisation
+        - Stakeholder request
+        - Efficiency changes 
+        - Project interoperablility 
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: prior-issue
+    attributes:
+      label: Is this request related to a prior issue?
+      options:
+        - 'Yes'
+        - 'No'
+  - type: textarea
+    id: prior-issue-def
+    attributes:
+      label: Prior issue identity
+      description: If you answered yes to the above, please include a link to the related issue page here.
+      placeholder: Issue page link
+  - type: textarea
+    id: ask
+    attributes:
+      label: Feature ask
+      description: >
+       Please outline the feature ask here. Try to be clear and concise. 
+       What is the requested feature, what does the program currently do? It is helpful to explicitly link to some code if the feature is related to interoperatbility or standardisation.
+      placeholder: What's the ask?

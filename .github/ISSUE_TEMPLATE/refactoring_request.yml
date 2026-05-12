@@ -1,0 +1,26 @@
+name: Refactoring Request
+description: Submit a refactoring request.
+title: "[Refactoring Required]: "
+labels: ["refactoring-required", "triage"]
+body:
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature type
+      description: What category does the feature request fall into?
+      options:
+        - Best practices alignment
+        - Pipeline standardisation
+        - Pipeline modularisation
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: ask
+    attributes:
+      label: Where is refactoring required?
+      description: |
+       Please outline the required refactoring here. 
+       Try to be clear and concise. How is the program/pipeline currently written, and what should change for it to fit into the standard?
+       It is helpful to explicitly link to some code if the feature is related to interoperatbility or standardisation.
+      placeholder: What's the ask?

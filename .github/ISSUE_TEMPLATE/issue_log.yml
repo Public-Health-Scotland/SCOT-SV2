@@ -1,0 +1,32 @@
+name: Issue logging
+description: |
+ Logging issues related to the implementation of this code, but not caused by it. For example, a sample has been misnamed outside of standards which has caused a problem with running a pipeline.
+title: "[Issue logging]: "
+labels: ["issue-logging", "triage"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: |
+       Please describe what occurred, and the cause that was identified.
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date of issue 
+      description: Date on which the bug occured, given in a YYYY-MM-DD format. This is essential for checking the related logs in detail.
+    validations:
+      required: true
+  - type: textarea
+    id: run-id
+    attributes:
+      label: Run ID
+      description: Please provide the run ID for which this issue occured.
+      render: shell
+  - type: textarea
+    id: samples-affected
+    attributes:
+      label: Samples affected
+      description: Provide relevant sample ID, or sample IDs in a comma separated list if there are a small number.  Otherwise specify whether it's a whole run, or just a certain subgroup IE. flu samples.
