@@ -1,0 +1,15 @@
+Bootstrap: localimage
+From: /sg2/code/singularity_registry/recipes/base_image/base_image_v1.0.sif
+# Replace {{conda_environment_yml}} with the conda environment file being used to make the image.
+%files 
+conda_environment_v1.0.yml /scratch/conda.yml
+
+%post
+    micromamba install -y -n base -f /scratch/conda.yml
+    micromamba env export --name base --explicit > environment.lock
+    echo ">> CONDA_LOCK_START"
+    cat environment.lock
+    echo "<< CONDA_LOCK_END"
+    micromamba clean -a -y
+%environment
+    export PATH="$MAMBA_ROOT_PREFIX/bin:$PATH" 

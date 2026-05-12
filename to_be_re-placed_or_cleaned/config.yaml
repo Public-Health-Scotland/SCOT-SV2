@@ -1,0 +1,33 @@
+# path to the top-level directory containing the analysis results
+data_root: /data/genomics/results/qc_pipeline/inputs
+
+# optionally the plots can have a "run name" prefix. If this is not defined the prefix will be "default"
+run_name: GGC_Validation
+
+# path to the nCov reference genome
+reference_genome: /data/tools/primer-schemes/nCoV-2019/V3/nCoV-2019.reference.fasta
+
+# the sequencing platform used, can be "oxford-nanopore" or "illumina"
+platform: "illumina"
+
+# path to the BED file containing the primers, this should follow the format downloaded from
+# the ARTIC repository
+primer_bed: /data/tools/primer-schemes/nCoV-2019/V3/nCoV-2019.primer.bed
+
+# the naming convention for the bam files
+# this can use the variables {data_root} (as above) and {sample}
+# As per the example above, this will expand to run_200430/sampleA.sorted.bam for sampleA
+bam_pattern: "{data_root}/{sample}.mapped.bam"
+
+# the naming convention for the consensus sequences
+consensus_pattern: "{data_root}/{sample}.primertrimmed.consensus.fa"
+
+# the naming convention for the variants file, NF illumina runs typically use
+# "{data_root}/{sample}.variants.tsv and oxford nanopore runs use "{data_root}/{sample}.pass.vcf.gz"
+variants_pattern: "{data_root}/{sample}.variants.tsv"
+
+#
+# if a list of sample IDs for negative controls is provided, a report containing the amount
+# of coverage detected in the negative controls can be generated
+#
+negative_control_samples: [ "GGC_Validation_EM_NEG_WGS_2010118_1_1R_S280_L001", "GGC_Validation_EM_NEG_WGS_2010118_1_2R_S286_L001", "GGC_Validation_EM_NEG_WGS_2010118_2_1R_S281_L001", "GGC_Validation_EM_NEG_WGS_2010118_2_2R_S287_L001", "GGC_Validation_EM_NEG_WGS_2010118_3_1R_S282_L001", "GGC_Validation_EM_NEG_WGS_2010118_3_2R_S288_L001", "GGC_Validation_NEGATIVE_01_S290_L001", "GGC_Validation_NEGATIVE_02_S292_L001", "GGC_Validation_NEGATIVE_03_S294_L001", "GGC_Validation_NEGATIVE_04_S296_L001", "GGC_Validation_NEGATIVE_05_S297_L001", "GGC_Validation_NEGATIVE_06_S299_L001", "GGC_Validation_NEGATIVE_07_S301_L001", "GGC_Validation_NEGATIVE_08_S303_L001", "GGC_Validation_NEGATIVE_09_S306_L001", "GGC_Validation_NEGATIVE_10_S308_L001", "GGC_Validation_NEGATIVE_11_S310_L001", "GGC_Validation_NEGATIVE_12_S312_L001", "GGC_Validation_NEGATIVE_13_S313_L001", "GGC_Validation_NEGATIVE_14_S315_L001", "GGC_Validation_NEGATIVE_15_S317_L001", "GGC_Validation_NEGATIVE_16_S319_L001", "GGC_Validation_NEGATIVE_17_S322_L001", "GGC_Validation_NEGATIVE_18_S324_L001", "GGC_Validation_NEGATIVE_19_S326_L001", "GGC_Validation_NEGATIVE_20_S328_L001", "GGC_Validation_NEGATIVE_21_S329_L001", "GGC_Validation_NEGATIVE_22_S331_L001", "GGC_Validation_NEGATIVE_23_S333_L001", "GGC_Validation_NEGATIVE_24_S335_L001", "GGC_Validation_NEGATIVE_25_S338_L001", "GGC_Validation_NEGATIVE_26_S340_L001", "GGC_Validation_NEGATIVE_27_S342_L001", "GGC_Validation_NEGATIVE_28_S344_L001", "GGC_Validation_NEGATIVE_29_S345_L001", "GGC_Validation_NEGATIVE_30_S347_L001", "GGC_Validation_NEGATIVE_31_S349_L001", "GGC_Validation_NEGATIVE_32_S351_L001", "GGC_Validation_NEGATIVE_33_S354_L001", "GGC_Validation_NEGATIVE_34_S356_L001", "GGC_Validation_NEGATIVE_35_S358_L001", "GGC_Validation_NEGATIVE_36_S360_L001", "GGC_Validation_NEGATIVE_37_S361_L001", "GGC_Validation_NEGATIVE_38_S363_L001", "GGC_Validation_NEGATIVE_39_S365_L001", "GGC_Validation_NEGATIVE_40_S367_L001", "GGC_Validation_NEGATIVE_41_S370_L001", "GGC_Validation_NEGATIVE_42_S372_L001", "GGC_Validation_NEGATIVE_43_S374_L001", "GGC_Validation_NEGATIVE_44_S376_L001", "GGC_Validation_NEGATIVE_45_S377_L001", "GGC_Validation_NEGATIVE_46_S379_L001", "GGC_Validation_NEGATIVE_47_S381_L001", "GGC_Validation_NegCtrl_02_S96_L001", "GGC_Validation_NegCtrl_S48_L001", "GGC_Validation_SG_NEG_WGS_2010118_1_1R_S268_L001", "GGC_Validation_SG_NEG_WGS_2010118_1_2R_S274_L001", "GGC_Validation_SG_NEG_WGS_2010118_2_1R_S269_L001", "GGC_Validation_SG_NEG_WGS_2010118_2_2R_S275_L001", "GGC_Validation_SG_NEG_WGS_2010118_3_1R_S270_L001", "GGC_Validation_SG_NEG_WGS_2010118_3_2R_S276_L001", "GGC_Validation_1521274_S15_L001", "GGC_Validation_EM_Conc_12a_S143_L001", "GGC_Validation_EM_Rut_10a_S187_L001", "GGC_Validation_KF_Rut_11b_S118_L001", "GGC_Validation_SG_Rut_10b_1R_S212_L001" ]

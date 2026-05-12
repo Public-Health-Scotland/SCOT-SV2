@@ -1,0 +1,27 @@
+# path to the top-level directory containing the analysis results
+data_root: /data/genomics/results/qc_pipeline/inputs
+
+# optionally the plots can have a "run name" prefix. If this is not defined the prefix will be "default"
+run_name: GGC_Validation
+
+# path to the nCov reference genome
+reference_genome: /data/tools/primer-schemes/nCoV-2019/V3/nCoV-2019.reference.fasta
+
+# the sequencing platform used, can be "oxford-nanopore" or "illumina"
+platform: "oxford-nanopore"
+
+# path to the BED file containing the primers, this should follow the format downloaded from
+# the ARTIC repository
+primer_bed: /data/tools/primer-schemes/nCoV-2019/V3/nCoV-2019.primer.bed
+
+# the naming convention for the bam files
+# this can use the variables {data_root} (as above) and {sample}
+# As per the example above, this will expand to run_200430/sampleA.sorted.bam for sampleA
+bam_pattern: "{data_root}/{sample}.sorted.bam"
+
+# the naming convention for the consensus sequences
+consensus_pattern: "{data_root}/{sample}.consensus.fasta"
+
+# the naming convention for the variants file, NF illumina runs typically use
+# "{data_root}/{sample}.variants.tsv and oxford nanopore runs use "{data_root}/{sample}.pass.vcf.gz"
+variants_pattern: "{data_root}/{sample}.pass.vcf.gz"

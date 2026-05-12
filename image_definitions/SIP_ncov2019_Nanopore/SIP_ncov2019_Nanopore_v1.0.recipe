@@ -1,0 +1,17 @@
+#Bootstrap: Library
+#From: development/base_image:v1.0
+Bootstrap: localimage
+From: /sg2/code/singularity_registry/recipes/base_image/base_image_v1.0.sif
+
+%files 
+SIP_ncov2019_Nanopore_conda_environment_v1.0.yml /scratch/conda.yml
+
+%post
+    micromamba install -v -y -n base -f /scratch/conda.yml
+    micromamba env export --name base --explicit > environment.lock
+    echo ">> CONDA_LOCK_START"
+    cat environment.lock
+    echo "<< CONDA_LOCK_END"
+    micromamba clean -a -y
+%environment
+    export PATH="$MAMBA_ROOT_PREFIX/bin:$PATH" 

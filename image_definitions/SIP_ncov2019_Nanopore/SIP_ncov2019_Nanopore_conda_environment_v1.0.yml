@@ -1,0 +1,18 @@
+name: SIP_ncov2019_Nanopore_v1.0
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - artic=1.2.4
+  - biopython=1.84
+  - libxcb=1.16
+  - matplotlib=3.9.1
+  - pyyaml
+  - samtools=1.18
+  - pandas=2.2.2
+  - numpy=1.26.4
+  - pysam=0.21.0
+  - h5py=3.8.0
+  - htslib=1.17
+  - pip:
+    - spectra==0.0.11
