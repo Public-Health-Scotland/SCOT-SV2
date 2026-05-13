@@ -1,0 +1,41 @@
+name: SIP_autoQC
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - usher
+  - augur=11.1.2
+  - minimap2
+  - r-ggforce=0.3.1
+  - gofasta=0.0.5
+  - parasail-python=1.2.4
+  - numpy=1.19.1
+  - bedtools=2.30.0
+  - pysam
+  - pip=19.3.1
+  - newick_utils
+  - mafft=7.487
+  - iqtree[version='<2']
+  - r-argparse=2.0.3
+  - samtools=1.13
+  - poppler=21.10
+  - snakemake=6.8.0
+  - icu=68.1
+  - snpeff=5.0-0
+  - bioconductor-ggtree=2.0.0
+  - r-patchwork=1.0.0
+  - r-base=3.6.3
+  - boost-cpp=1.74.0
+  - biopython=1.77
+  - dendropy
+  - pyvcf
+  - setuptools=57.4.0
+  - pip:
+      - ncov-parser==0.6.9
+      - git+https://github.com/hCoV-2019/lineages.git@98987705ae1efd919b16cdb3dc20e84f574f1a53
+      - git+https://github.com/hCoV-2019/pangolin.git@v3.1.14
+      - git+https://github.com/cov-lineages/pangoLEARN.git@2021-09-28
+      - git+https://github.com/cov-lineages/constellations.git@v0.0.16
+      - git+https://github.com/cov-lineages/scorpio.git@v0.3.12
+      - git+https://github.com/cov-lineages/pango-designation.git@v1.2.82
+      - git+https://github.com/jts/ncov-watch.git

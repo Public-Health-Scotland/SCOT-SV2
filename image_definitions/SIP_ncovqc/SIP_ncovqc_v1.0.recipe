@@ -1,0 +1,20 @@
+Bootstrap: localimage
+From: /sg2/code/singularity_registry/recipes/base_image/base_image_v1.0.sif
+
+%files 
+SIP_ncovqc_v1.0.yml /scratch/conda.yml
+
+
+%post
+    apt update
+    apt install git -y
+    export CI=1
+    micromamba install -y -n base conda-forge::procps-ng
+    micromamba install -y -n base -f /scratch/conda.yml
+    micromamba env export --name base --explicit > environment.lock
+    echo ">> CONDA_LOCK_START"
+    cat environment.lock
+    echo "<< CONDA_LOCK_END"
+    micromamba clean -a -y
+%environment
+    export PATH="$MAMBA_ROOT_PREFIX/bin:$PATH" 
