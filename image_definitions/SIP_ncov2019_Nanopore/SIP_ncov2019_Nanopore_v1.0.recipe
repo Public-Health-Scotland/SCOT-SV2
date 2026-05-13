@@ -4,7 +4,7 @@ Bootstrap: localimage
 From: /sg2/code/singularity_registry/recipes/base_image/base_image_v1.0.sif
 
 %files 
-SIP_ncov2019_Nanopore_conda_environment_v1.0.yml /scratch/conda.yml
+SIP_ncov2019_Nanopore_v1.0.yml /scratch/conda.yml
 
 %post
     export CI=1
