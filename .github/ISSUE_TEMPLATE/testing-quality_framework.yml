@@ -1,0 +1,46 @@
+name: Testing and Quality Framework improvement
+description: |
+ Specify a software requirement which is needed to improve the testing framework of the tool, or to more generally improve the Quality compliance.
+ 
+ This could be to improve the overall integrity of the tool (eg. a unit test), part of the validation process, or to better comply with quality management guidelines more generally.
+title: "[Testing and Quality Framework]: "
+labels: ["testing","quality", "validation"]
+body:
+  - type: dropdown
+    id: testing-type
+    attributes:
+      label: Category
+      description: |
+       What category does this testing requirement most closely align with?
+
+       Validation: The testing requirement is needed in order to satisfy UKAS accreditation guidelines.
+
+       Code Integrity: The testing requirement is needed to improve the quality of the software in general.
+
+       Quality: The requirement more generally related to quality compliance. 
+
+      options:
+        - Validation
+        - Code Integrity
+        - Quality
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: highlevel-requirement
+    attributes:
+      label: Rationale, and Proposal
+      description: |
+       Outline the development need identified by providing a brief summary of the current gap in testing and quality framework of the tool. 
+       This could be a need for general unit-tests, the inclusion of debugging and testing flags, a pathway and/or resource specification for validation tests.
+
+       Give a high-level overview of the change which would be implemented to fill the identified gap. Taking a function-first perspective might be useful e.g. "The pipeline should define categorical failure states for samples."
+
+      placeholder: |     
+       E.g. : 
+       "An exception is needed to allow for samples with very low read-counts to be reported informatively. Currently they will fail during the nextflow pipeline during QC steps, but will be reported as a non-specific 'Failed'.
+       
+       The pipeline should ensure that the failure point of failed samples is accurately tracked by defining an more informative fail-state I.e. 'Failed_Low-readcount'"
+    validations:
+      required: true
+

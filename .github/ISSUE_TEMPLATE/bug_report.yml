@@ -20,8 +20,11 @@ body:
       description: |
        How severe is the bug?
        Warning : There is a warning being thrown but otherwise the pipeline is functional.
+
        Minor : The pipeline is doing its job in terms of reportable results, but there is something else not as expected. Ie. A report is misformatted, logging is not being written to the correct location, etc.
+
        Moderate : The pipeline has thrown an error or in some way was unable to run as expected. A short-term fix could be made, but it is possible that it could happen again.
+       
        Major : The pipeline consistently cannot run as expected. There is an essential failure state that is preventing completion for one or more samples which is likely to keep occurring.
       options:
         - Warning
