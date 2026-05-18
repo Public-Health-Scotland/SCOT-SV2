@@ -1,8 +1,6 @@
 name: Testing and Quality Framework improvement
 description: |
- Specify a software requirement which is needed to improve the testing framework of the tool, or to more generally improve the Quality compliance.
- 
- This could be to improve the overall integrity of the tool (eg. a unit test), part of the validation process, or to better comply with quality management guidelines more generally.
+ Propose additions or changes which would improve the tool's testing and quality framework. I.e. Unit tests, defining validation datasets, improved exception handling. 
 title: "[Testing and Quality Framework]: "
 labels: ["testing","quality", "validation"]
 body:
